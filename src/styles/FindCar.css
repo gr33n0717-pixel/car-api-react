@@ -1,0 +1,321 @@
+input {
+    padding: 20px 80px 20px 20px;
+    width: 100%;
+    font-size: 20px;
+    border: 1px solid;
+    border-radius: 35px;
+    height: 60px;
+    outline: none;
+}
+
+
+.navbar {
+    margin: -20px;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+.nav__content--wrapper {
+    display: flex;
+    justify-content: space-between ;
+    align-items: center;
+    margin: 0 auto;
+    width: 100%;
+    max-width: 1200px;
+}
+
+.nav__links {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    max-width: 430px;
+    align-items: center;
+    position: relative;
+    z-index: 2;
+}
+
+.menu__btn {
+    display: none;
+    background: none;
+    border: none;
+    font-size: 30px;
+    color: #6030b1;
+    cursor: pointer;
+
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    z-index: 1000;
+}
+
+
+.link__hover-effect{
+    position: relative;
+    color: #000000;
+}
+
+.link__hover-effect::after {
+    content: "";
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    width: 0px;
+    height: 3px;
+    background-color: rgb(255, 252, 252);
+    transition: all 300ms ease;
+}
+
+.link__hover-effect:hover{
+    color: #6030b1;
+}
+
+.link__hover-effect:hover::after {
+    left: 0;
+    width: 100%;
+}
+
+.nav__link, .nav__link--primary {
+    text-decoration: none;
+    font-size: 18px;
+    font-weight: 500;
+}
+
+.nav__link--primary {
+    background-color: white;
+    color: #6030b1;
+    padding: 12px 50px;
+    border-radius: 50px;
+    transition: all 300ms ease;
+}
+
+.nav__link--primary:hover {
+    background-color: #ff328f;
+    color: white;
+}
+
+.nav__menu--wrapper {
+    height: 326px;
+    padding: 40px 15px;
+    align-items: center;
+    position: relative;
+    width: 100%;
+}
+
+.carpark__img {
+    background-image: linear-gradient(
+        to bottom,
+        transparent 0%,
+        transparent 50%,
+        white 50%,
+        white 100%
+    ), url(https://dev.d24jig8s1lr7n9.amplifyapp.com/img/carpark.8742e246.jpeg);
+    background-repeat:no-repeat;
+    background-position: 50%;
+    background-size: cover;
+    background-attachment: fixed;
+    width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    z-index: -1; 
+} 
+
+.carpark__img::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background-color: rgba(41, 25, 71, 0.83);
+}
+
+.browse__cars {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    width: 100%;
+}
+
+.search__btn--wrapper {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    z-index: 1000;
+    font-size: 32px;
+    padding: 5px 20px 5px 5px;
+    transition: all 300ms ease;
+}
+
+.search__btn--wrapper .fa-magnifying-glass {
+    color: black;
+    font-size: 34px;
+    transition: all 300ms ease;
+}
+
+.search__btn--wrapper .fa-magnifying-glass:hover {
+    color: #ff328f;
+}
+
+
+
+
+/*
+ TABLET
+   601px - 1200px
+
+   */
+
+@media (max-width: 1200px) {
+
+    .car:hover {
+        scale: 1;
+    }
+
+    .nav__content--wrapper {
+        padding: 0 20px;
+    }
+
+    .cars__container {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 30px;
+        padding: 0 25px;
+    }
+
+    .car__img {
+        width: 100%;
+        height: 220px;
+        object-fit: cover;
+    }
+
+}
+
+
+/*
+ LARGE PHONES
+   401px - 600px
+
+   */
+
+@media (max-width: 738px) {
+
+    .menu__btn{
+        display: block;
+    }
+
+    .car:hover {
+        scale: 1;
+    }
+
+    .nav__links {
+        display: none;
+        position: fixed;
+        top: 65px;
+        right: 20px;
+        width: 200px;
+        padding: 20px;
+        flex-direction: column;
+        gap: 20px;
+        background-color: white;
+        border-radius: 15px;
+        box-shadow: 0 5px 20px rgba(0, 0, 0, .15);
+        z-index: 1000004;
+    }
+
+    .nav__links.active {
+        display: flex;
+    }
+
+    .nav__link .white {
+        color: #6030b1;
+    }
+
+
+    .nav__content--wrapper {
+        justify-content: center;
+    }
+
+
+    h1 {
+        font-size: 32px;
+        margin-bottom: 30px;
+    }
+
+    .search__results--wrapper {
+        flex-direction: column;
+        align-items: stretch;
+        gap: 20px;
+    }
+
+    .search__results {
+        font-size: 25px;
+        padding: 0;
+    }
+
+    .filter__wrapper {
+        max-width: 100%;
+    }
+
+    .cars__container {
+        grid-template-columns: 1fr;
+        gap: 25px;
+        padding: 0 20px;
+    }
+
+    .car__img {
+        width: 100%;
+        height: 230px;
+        object-fit: cover;
+    }
+
+}
+
+
+/*
+ SMALL PHONES
+   400px and below
+
+   */
+
+@media (max-width: 400px) {
+
+    .car:hover {
+        scale: 1;
+    }
+
+
+    .logo {
+        width: 115px;
+    }
+
+    h1 {
+        font-size: 27px;
+    }
+
+    input {
+        font-size: 17px;
+        height: 55px;
+    }
+
+    .search__results {
+        font-size: 21px;
+    }
+
+    .cars__container {
+        padding: 0 12px;
+        gap: 20px;
+    }
+
+    .car__img {
+        width: 100%;
+        height: 190px;
+        object-fit: cover;
+    }
+
+    .car__details {
+        padding: 10px 12px;
+    }
+
+}
