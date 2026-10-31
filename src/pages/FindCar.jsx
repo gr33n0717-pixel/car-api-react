@@ -1,7 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import "../styles/FindCar.css";
-import Cars from "../data/Cars";
+import Cars from "../components/Cars";
 
 const FindCar = () => {
   return (

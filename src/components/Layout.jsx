@@ -1,6 +1,11 @@
-import React from "react";
+import React, { useState } from "react";
 import '../styles/Layout.css'
+
+
+
 const Layout = () => {
+
+
   return (
     <section id="landing__page">
       <div className="content__wrapper">
@@ -15,7 +20,7 @@ const Layout = () => {
           </div>
           <div className="seacrh-bar__wrapper">
             <input className="input__home" type="text" placeholder="Search by Model, Make or Keyword" />
-            <button className="not__loading" onclick="search()">
+            <button className="not__loading" onClick="search()">
               <i className="fa-solid fa-magnifying-glass"></i>
               <i className="fa-solid fa-spinner spinner"></i>
             </button>
