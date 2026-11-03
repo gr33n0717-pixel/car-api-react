@@ -1,9 +1,29 @@
-import React from "react";
+import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import "../styles/FindCar.css";
 import Cars from "../components/Cars";
+import Search from "../components/Search";
+import Filter from "../components/Filter";
 
 const FindCar = () => {
+  const [query, setQuery] = useState("");
+  const [text, setText] = useState("");
+  const [priceRange, setPriceRange] = useState("")
+
+  const handleSearch = (value) => {
+    if (value ===  "") {
+      handleReset()
+    } else {
+      setQuery(value);
+    }
+  };
+
+  const handleReset = () => {
+    setQuery("");
+    setText("");
+    setPriceRange("")
+  };
+
   return (
     <>
       <header className="navbar">
@@ -32,14 +52,11 @@ const FindCar = () => {
           <div className="browse__cars">
             <h1>Browse Our Cars</h1>
             <div className="input__wrap">
-              <input
-                type="text"
-                placeholder="Search by Model, Make or Keyword"
-                id="search__input"
+              <Search
+                onSearch={handleSearch}
+                text={text}
+                onTextChange={setText}
               />
-              <div className="search__btn--wrapper" id="search-btn">
-                <i className="fa-solid fa-magnifying-glass"></i>
-              </div>
             </div>
           </div>
         </div>
@@ -47,23 +64,11 @@ const FindCar = () => {
       <section id="search">
         <div className="search__results--wrapper">
           <h1 className="search__results">
-            Search results for: <span className="purple"></span>
+            Search results for: <span className="purple">{query}</span>
           </h1>
-
-          <div className="filter__wrapper">
-            <select name="price__flter" id="price__filter">
-              <option defaultValue={""}>
-                Filter by price
-              </option>
-              <option value="LOW_TO_LOW">$0 - $10k</option>
-              <option value="LOW_TO_MEDIUM">$10k - $20k</option>
-              <option value="MEDIUM_TO_SEMI_HIGH">$20k - $40k</option>
-              <option value="SEMI_HIGH_TO_HIGH">$40k - $60k</option>
-              <option value="HIGH_TO_VERY_HIGH">$60k - $100k</option>
-            </select>
-          </div>
+          <Filter priceRange={priceRange} onFilter={(value) =>(value === "" ? handleReset(): setPriceRange(value))} />
         </div>
-        <Cars cars={Cars} />
+        <Cars query={query} onReset={handleReset} priceRange={priceRange}/>
       </section>
     </>
   );
