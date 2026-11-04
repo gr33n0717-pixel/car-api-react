@@ -30,7 +30,7 @@ const FindCar = () => {
         <div className="nav__menu--wrapper">
           <div className="nav__content--wrapper">
             <div className="logo">
-              <img src="public/blinker__white.png" alt="logo" />
+              <img src="/blinker__white.png" alt="logo" />
             </div>
             <button className="menu__btn" aria-label="Open Navigation">
               <i className="fa-solid fa-bars"></i>

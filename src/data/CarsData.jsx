@@ -6,7 +6,7 @@
         {
           id: 1,
           title: "Toyota GR GX 2026",
-          url: "/public//toyota-1.jfif",
+          url: "/toyota-1.jfif",
           mileage: "40,500",
           type:"Coupe",
           transmission:"Automatic",
@@ -15,7 +15,7 @@
         {
           id: 2,
           title: "Toyota Corolla GR 2023",
-          url: "/public//toyota-2.jfif",
+          url: "/toyota-2.jfif",
           mileage: "68,205",
           type:"Hatchback",
           transmission:"Manual / Automatic",
@@ -24,7 +24,7 @@
         {
           id: 3,
           title: "Toyota Camry TRD 2018",
-          url: "/public//toyota-3.jfif",
+          url: "/toyota-3.jfif",
           mileage: "11,740",
           type:"Sedan",
           transmission:"Automatic",
@@ -33,7 +33,7 @@
         {
           id: 4,
           title: "Toyota Supra GR 2020",
-          url: "/public//toyota-4.jfif",
+          url: "/toyota-4.jfif",
           mileage: "22,702",
           type:"Coupe",
           transmission:"Manual / Automatic",
@@ -42,7 +42,7 @@
         {
           id: 5,
           title: "Toyota Highlander 2024",
-          url: "/public//toyota-5.jfif",
+          url: "/toyota-5.jfif",
           mileage: "96,996",
           type:"SUV",
           transmission:"Automtic",
@@ -51,7 +51,7 @@
         {
           id: 6,
           title: "Toyota Tacoma 2016",
-          url: "/public//toyota-6.jfif",
+          url: "/toyota-6.jfif",
           mileage: "98,403",
           type:"Truck",
           transmission:"Manual / Automatic",
@@ -60,7 +60,7 @@
         {
           id: 7,
           title: "Honda Prelude 2026",
-          url: "/public//honda-1.jfif",
+          url: "/honda-1.jfif",
           mileage: "90,000",
           type:"Coupe",
           transmission:"Automatic",
@@ -69,7 +69,7 @@
         {
           id: 8,
           title: "Honda Civiv Type R 2016",
-          url: "/public//honda-2.jfif",
+          url: "/honda-2.jfif",
           mileage: "99,999",
           type:"Hatchback",
           transmission:"Manual",
@@ -78,7 +78,7 @@
         {
           id: 9,
           title: "Honda Prologue 2026",
-          url: "/public//honda-3.jfif",
+          url: "/honda-3.jfif",
           mileage: "48,000",
           type:"SUV",
           transmission:"Automatic",
@@ -87,7 +87,7 @@
         {
           id: 10,
           title: "Honda Accord 2018",
-          url: "/public//honda-4.jfif",
+          url: "/honda-4.jfif",
           mileage: "48,000",
           type:"Sedan",
           transmission:"Manual / Automatic",
@@ -96,7 +96,7 @@
         {
           id: 11,
           title: "Honda Civic 2022",
-          url: "/public//honda-5.jfif",
+          url: "/honda-5.jfif",
           mileage: "48,000",
           type:"Sedan",
           transmission:"Manual / Automatic",
@@ -105,7 +105,7 @@
         {
           id: 12,
           title: "Honda Civic SI 2023",
-          url: "/public//honda-6.jfif",
+          url: "/honda-6.jfif",
           mileage: "48,000",
           type:"Sedan",
           transmission:"Manual",
@@ -114,7 +114,7 @@
         {
           id: 13,
           title: "Acura ILX 2022",
-          url: "/public//acura-1.jfif",
+          url: "/acura-1.jfif",
           mileage: "48,000",
           type:"Sedan",
           transmission:"Automatic",
@@ -123,7 +123,7 @@
         {
           id: 14,
           title: "Acura Integra Type S 2025",
-          url: "/public//acura-2.png",
+          url: "/acura-2.png",
           mileage: "48,000",
           type:"Sedan",
           transmission:"Manual",
@@ -132,7 +132,7 @@
         {
           id: 15,
           title: "Acura Integra 2024",
-          url: "/public//acura-3.jfif",
+          url: "/acura-3.jfif",
           mileage: "48,000",
           type:"Sedan",
           transmission:"Manual / Automatic",
@@ -141,7 +141,7 @@
         {
           id: 16,
           title: "Acura NSX Type S 2022",
-          url: "/public//acura-4.jpg",
+          url: "/acura-4.jpg",
           mileage: "48,000",
           type:"Coupe",
           transmission:"Automatic",
@@ -150,7 +150,7 @@
         {
           id: 17,
           title: "Acura ADX 2026",
-          url: "/public//acura-5.jfif",
+          url: "/acura-5.jfif",
           mileage: "48,000",
           type:"SUV",
           transmission:"Automatic",
@@ -159,7 +159,7 @@
         {
           id: 18,
           title: "Acura MDX 2022",
-          url: "/public//acura-6.jfif",
+          url: "/acura-6.jfif",
           mileage: "48,000",
           type:"SUV",
           transmission:"Automatic",
@@ -168,7 +168,7 @@
         {
           id: 19,
           title: "Lexus IS 350 F Sport 2021",
-          url: "/public//lexus-1.jfif",
+          url: "/lexus-1.jfif",
           mileage: "48,000",
           type:"Sedan",
           transmission:"Automatic",
@@ -177,7 +177,7 @@
         {
           id: 20,
           title: "Lexus RX 350 2020",
-          url: "/public//lexus-2.jfif",
+          url: "/lexus-2.jfif",
           mileage: "48,000",
           type:"SUV",
           transmission:"Automatic",
@@ -186,7 +186,7 @@
         {
           id: 21,
           title: "Lexus LFA 2012",
-          url: "/public//lexus-3.jfif",
+          url: "/lexus-3.jfif",
           mileage: "48,000",
           type:"Coupe",
           transmission:"Automatic",
@@ -195,7 +195,7 @@
         {
           id: 22,
           title: "Lexus GX 2025",
-          url: "/public//lexus-4.jfif",
+          url: "/lexus-4.jfif",
           mileage: "48,000",
           type:"SUV",
           transmission:"Automatic",
@@ -204,7 +204,7 @@
         {
           id: 23,
           title: "Lexus 2023 IS 350",
-          url: "/public//lexus-5.jfif",
+          url: "/lexus-5.jfif",
           mileage: "48,000",
           type:"Sedan",
           transmission:"Automatic",
@@ -213,7 +213,7 @@
         {
           id: 24,
           title: "Lexus IS 500 F Sport 2022",
-          url: "/public//lexus-6.jfif",
+          url: "/lexus-6.jfif",
           mileage: "48,000",
           type:"Sedan",
           transmission:"Automatic",

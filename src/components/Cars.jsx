@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import notfound from "../../public/notfound.svg";
+import notfound from "/notfound.svg";
 import { getCars } from "../data/CarsData";
 import "../styles/Cars.css";
 
