@@ -4,14 +4,16 @@ import "../styles/FindCar.css";
 import Cars from "../components/Cars";
 import Search from "../components/Search";
 import Filter from "../components/Filter";
+import { AnimeData } from "../data/AnimeData";
 
 const FindCar = () => {
   const [query, setQuery] = useState("");
   const [text, setText] = useState("");
   const [priceRange, setPriceRange] = useState("")
+  const [animeCount, setAnimeCount] = useState(0)
 
   const handleSearch = (value) => {
-    if (value ===  "") {
+    if (value ===  "" ) {
       handleReset()
     } else {
       setQuery(value);
@@ -68,7 +70,8 @@ const FindCar = () => {
           </h1>
           <Filter priceRange={priceRange} onFilter={(value) =>(value === "" ? handleReset(): setPriceRange(value))} />
         </div>
-        <Cars query={query} onReset={handleReset} priceRange={priceRange}/>
+        <Cars query={query} onReset={handleReset} priceRange={priceRange} animeCount={animeCount}/>
+        <AnimeData animeQuery={query} onResults={setAnimeCount} />
       </section>
     </>
   );
