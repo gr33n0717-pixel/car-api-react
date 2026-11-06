@@ -7,7 +7,7 @@ const Nav = () => {
     <header className="navbar__home">
       <div className="nav__content--wrapper--home">
         <div className="logo">
-          <img src="public/blinker-icon.png" alt="logo" />
+          <img src="/blinker-icon.png" alt="logo" />
         </div>
         <button className="menu__btn--home" aria-label="Open Navigation">
           <i className="fa-solid fa-bars"></i>

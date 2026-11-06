@@ -3,6 +3,7 @@ import notfound from "/notfound.svg";
 import { getCars } from "../data/CarsData";
 import "../styles/Cars.css";
 import Loading from "./Loading";
+import { Link } from "react-router-dom";
 
 const priceRanges = {
   LOW_TO_LOW: [0, 10000],
@@ -18,6 +19,7 @@ const Cars = ({ query, onReset, priceRange, animeCount }) => {
 
   useEffect(() => {
     async function fetchCars() {
+      setLoading(true)
       try {
         const data = await getCars();
         setCars(data);
@@ -31,7 +33,7 @@ const Cars = ({ query, onReset, priceRange, animeCount }) => {
   }, []);
 
   if (loading) {
-    return <Loading />;
+    return <Loading message="Searching for your car"/>;
   }
 
   const filteredCars = cars.filter((car) => {
@@ -46,7 +48,7 @@ const Cars = ({ query, onReset, priceRange, animeCount }) => {
 
   if (filteredCars.length === 0 && animeCount === 0) {
     return (
-      <div id="invalid__search" className="not__found hide-loading">
+      <div id="invalid__search" className="not__found">
         <img src={notfound} alt="" />
         <h2 className="loading__text">No search results found</h2>
         <h3 className="loading__text-sub">Click below to reset, or search for another car/anime</h3>
@@ -66,8 +68,8 @@ const Cars = ({ query, onReset, priceRange, animeCount }) => {
               <div
                 className="car"
                 key={car.id}
-                onClick={() => alert("This function hasn't been added yet")}
               >
+                <Link to='/carinfo'></Link>
                 <img className="car__img" src={car.url} alt={car.title} />
                 <div className="car__details">
                   <h2>{car.title}</h2>

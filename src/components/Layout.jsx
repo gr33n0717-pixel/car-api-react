@@ -27,7 +27,7 @@ const Layout = () => {
           </div>
           <img
             className="building__img"
-            src="public/building.png"
+            src="/building.png"
             alt="building"
           />
         </div>

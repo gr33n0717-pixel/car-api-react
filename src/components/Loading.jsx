@@ -6,7 +6,7 @@ const Loading = ({ message }) => {
         <div className="loading__progress"></div>
         <div className="loading__progress"></div>
       </div>
-      <div id="loading__spinner" className="hide-loading">
+      <div id="loading__spinner" className="">
         <i className="fas fa-spinner cars__loading--spinner"></i>
         <p className="loading__text">{message}</p>
       </div>
