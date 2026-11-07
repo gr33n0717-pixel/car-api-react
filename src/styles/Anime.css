@@ -1,0 +1,72 @@
+.back__btn {
+    text-decoration: None;
+    font-size: 24px;
+}
+
+.anime__info--container {
+    max-width: 1280px;
+    background-color: grey;
+    border-radius: 50px;
+    padding: 24px;
+}
+
+.anime__info--wrapper {
+    gap: 20px;
+    display: flex;
+    flex-direction: column;
+}
+
+.anime__info--content {
+    grid-template-columns: 1fr 2fr;
+    gap: 10px;
+    display: grid;
+}
+
+.anime__poster--img {
+    padding: 20px 15px 20px 15px;
+    height: auto;
+    border-radius: 50px;
+    display: flex;
+}
+
+.anime__title, .anime__synopsis, .anime__start-date, .anime__end-date{
+    font-size: 22px;
+    font-weight: 700;
+    margin: 0;
+}
+
+
+
+
+.anime__synopsis {
+  display: -webkit-box;
+  -webkit-line-clamp: 5;    
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.anime__text--wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+
+.anime-info__info {
+    border-bottom: 2px solid;
+    padding-bottom: 16px;
+}
+
+.show__more--btn  {
+    padding: 10px;
+    font-size: 16px;
+    border-radius: 15px;
+    border: solid;
+    border-width: 3px;
+    border-color: #ff328f;
+    cursor: pointer;
+    box-shadow: 0 4px 10px 4px rgb(255, 67, 183);
+    color: white;
+    background-color: rgb(255, 67, 183);
+    position: relative;
+}
