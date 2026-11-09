@@ -173,6 +173,17 @@ input {
 
 
 
+/*
+
+
+
+Loading
+
+
+*/
+
+
+
 
 #loading__bar {
     top: 20px;
@@ -300,6 +311,16 @@ input {
     border-color: #ff328f;
 }
 
+
+
+
+/*
+
+
+Car Card
+
+
+*/
 
 #cars {
     padding-top: 40px;
