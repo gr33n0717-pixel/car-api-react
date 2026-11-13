@@ -61,13 +61,55 @@
   flex-direction: column;
 }
 
+.recommended__cars--container {
+  padding: 12px;
+  color: white;
+  background-color: black;
+  margin-top: 1rem;
+  width: 100vw;
+  margin-left: calc(50% - 50vw);
+  margin-right: calc(50% - 50vw);
+  /* margin-bottom: calc(50% - 50vh); */
+}
+
+.recommended__cars {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  position: relative;
+}
+
+.recommended__text {
+  padding: 12px;
+}
+
+.recommended__cars--list {
+  display: flex;
+  flex-direction: row;
+  overflow: hidden;
+}
+
+.recommended__cars--list img {
+  padding: 12px;
+  border-radius: 50px;
+}
+
+.next__btn {
+  margin-top: 20%;
+  max-height: 40px;
+  cursor: pointer;
+  border: none;
+  color: white;
+  background: transparent;
+  font-size: 32px;
+}
+
 /* Skeleton loading */
 
 .skeleton__img {
   min-height: 300px;
   margin: 18px 0px;
-} 
-
+}
 
 .skeleton__title {
   height: 28px;
@@ -75,13 +117,11 @@
   margin: 18px 0px;
 }
 
-
 .skeleton__line {
   height: 24px;
   width: 30%;
   margin: 18px 0px;
 }
-
 
 .skeleton__text {
   height: 120px;

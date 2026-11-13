@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import "../styles/Layout.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faSpinner, faMagnifyingGlass } from "@fortawesome/free-solid-svg-icons";
+import { useNavigate } from "react-router-dom";
 
 const Layout = () => {
   const [loading, setLoading] = useState(false);

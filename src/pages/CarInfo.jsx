@@ -3,7 +3,7 @@ import { getCars } from "../data/CarsData";
 import { useEffect, useState } from "react";
 import "../styles/CarInfo.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faArrowLeft } from "@fortawesome/free-solid-svg-icons";
+import { faArrowLeft, faArrowRight, faArrowRotateBack } from "@fortawesome/free-solid-svg-icons";
 
 const CarInfo = () => {
   const { id } = useParams();
@@ -72,6 +72,16 @@ const CarInfo = () => {
             </div>
           </>
         )}
+      </div>
+      <div className="recommended__cars--container">
+        <div className="recommended__cars">
+          <strong className="recommended__text">Cars you may also like</strong>
+          <div className="recommended__cars--list">
+          <button className="next__btn"><FontAwesomeIcon icon={faArrowLeft}/></button>
+          <img src="/acura-1.jfif" alt="" />
+          <button className="next__btn"><FontAwesomeIcon icon={faArrowRight}/></button>
+          </div>
+        </div>
       </div>
     </>
   );
