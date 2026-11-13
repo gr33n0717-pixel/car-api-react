@@ -1,0 +1,90 @@
+.car__info--wrapper {
+  border: 1px solid;
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 12px;
+  color: white;
+  border-radius: 15px;
+}
+
+.car__info--wrapper img {
+  width: 100%;
+  height: auto;
+  padding-bottom: 16px;
+}
+
+.car__info--container {
+  border: 1px solid;
+  padding: 12px;
+}
+
+.car__info--container p {
+  display: flex;
+  gap: 20px;
+  align-items: center;
+}
+
+.car__info img {
+  border-bottom: 4px solid;
+  padding-bottom: 12px;
+}
+
+.back__cars {
+  text-decoration: None;
+  font-size: 24px;
+  transition: all 300ms ease-in-out;
+  cursor: pointer;
+  background: none;
+  border: none;
+  color: rgb(255, 253, 253);
+  transition: all 300ms ease-in-out;
+}
+.back__cars:hover {
+  color: #ff328e;
+}
+
+.car__backdrop {
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  background-size: cover;
+  background-position: center;
+  filter: blur(20px) brightness(0.5);
+  transform: scale(1.1);
+  margin: 0 auto;
+  width: 100%;
+  height: 100%;
+}
+
+.car__details--card {
+  display: flex;
+  flex-direction: column;
+}
+
+/* Skeleton loading */
+
+.skeleton__img {
+  min-height: 300px;
+  margin: 18px 0px;
+} 
+
+
+.skeleton__title {
+  height: 28px;
+  width: 50%;
+  margin: 18px 0px;
+}
+
+
+.skeleton__line {
+  height: 24px;
+  width: 30%;
+  margin: 18px 0px;
+}
+
+
+.skeleton__text {
+  height: 120px;
+  width: 100%;
+  margin: 18px 0px;
+}

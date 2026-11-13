@@ -19,7 +19,7 @@ const Cars = ({ query, onReset, priceRange, animeCount }) => {
 
   useEffect(() => {
     async function fetchCars() {
-      setLoading(true)
+      setLoading(true);
       try {
         const data = await getCars();
         setCars(data);
@@ -33,7 +33,7 @@ const Cars = ({ query, onReset, priceRange, animeCount }) => {
   }, []);
 
   if (loading) {
-    return <Loading message="Searching for your car"/>;
+    return <Loading message="Searching for your car" />;
   }
 
   const filteredCars = cars.filter((car) => {
@@ -51,7 +51,9 @@ const Cars = ({ query, onReset, priceRange, animeCount }) => {
       <div id="invalid__search" className="not__found">
         <img src={notfound} alt="" />
         <h2 className="loading__text">No search results found</h2>
-        <h3 className="loading__text-sub">Click below to reset, or search for another car/anime</h3>
+        <h3 className="loading__text-sub">
+          Click below to reset, or search for another car/anime
+        </h3>
         <button className="reset__btn" onClick={onReset}>
           Reset Filter
         </button>
@@ -65,11 +67,8 @@ const Cars = ({ query, onReset, priceRange, animeCount }) => {
         <div className="cars__wrapper">
           <div className="cars__container">
             {filteredCars.map((car) => (
-              <div
-                className="car"
-                key={car.id}
-              >
-                <Link to='/carinfo'></Link>
+              <Link to={`/carinfo/${car.id}`}key={car.id}>
+              <div className="car" >
                 <img className="car__img" src={car.url} alt={car.title} />
                 <div className="car__details">
                   <h2>{car.title}</h2>
@@ -92,6 +91,7 @@ const Cars = ({ query, onReset, priceRange, animeCount }) => {
                   </p>
                 </div>
               </div>
+              </Link>
             ))}
           </div>
         </div>

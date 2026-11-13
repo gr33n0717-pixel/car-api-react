@@ -11,7 +11,6 @@ const Anime = () => {
   const text = anime?.attributes?.synopsis || "No description available.";
 
   useEffect(() => {
-    // return;
     async function fetchOne() {
       try {
         const { data } = await axios.get(

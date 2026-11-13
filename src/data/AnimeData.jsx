@@ -14,12 +14,12 @@ export const AnimeData = ({ animeQuery, onResults }) => {
     const minWait = (ms) => new Promise((resolve) => setTimeout(resolve, ms));
 
     try {
-      const  [response]  = await Promise.all([
+      const [response] = await Promise.all([
         axios.get("https://kitsu.io/api/edge/anime", {
           params: { "filter[text]": animeQuery },
           timeout: 8000,
         }),
-        minWait(5000)
+        minWait(5000),
       ]);
       setGetAnime(response.data.data);
       onResults(response.data.data.length);
@@ -45,15 +45,17 @@ export const AnimeData = ({ animeQuery, onResults }) => {
   if (loading) return <Loading message="Searching for your anime" />;
 
   return (
-    <div className="cars__container">
+    <div className="anime__container">
       {getAnime.map((anime) => (
-        <div key={anime.id}>
-          <Link to={`/anime/${anime.id}`}>
-          <img src={anime.attributes.posterImage.medium} />
-          </Link>
-          <h2>{anime.attributes.titles.canonicalTitle}</h2>
-          <h3>{anime.attributes.startDate}</h3>
-        </div>
+        <Link to={`/anime/${anime.id}`} key={anime.id}>
+          <div className="anime__card">
+            <img src={anime.attributes.posterImage.medium} />
+            <h2>
+              {anime.attributes.titles.en || anime.attributes.canonicalTitle}
+            </h2>
+            <h3>{anime.attributes.startDate}</h3>
+          </div>
+        </Link>
       ))}
     </div>
   );

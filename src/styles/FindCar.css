@@ -1,6 +1,7 @@
-
-.fa-car, .fa-gauge-high, .fa-gears {
-    color: rgb(187, 191, 194);
+.fa-car,
+.fa-gauge-high,
+.fa-gears {
+  color: rgb(187, 191, 194);
 }
 
 input {
@@ -68,9 +69,6 @@ input {
   transition: all 300ms ease;
 }
 
-.link__hover-effect:hover {
-  color: #6030b1;
-}
 
 .link__hover-effect:hover::after {
   left: 0;
@@ -82,6 +80,7 @@ input {
   text-decoration: none;
   font-size: 18px;
   font-weight: 500;
+  color: white;
 }
 
 .nav__link--primary {
@@ -129,7 +128,6 @@ input {
   z-index: -1;
 }
 
-
 .browse__cars {
   display: flex;
   align-items: center;
@@ -159,19 +157,15 @@ input {
   color: #ff328f;
 }
 
-
-
 #search {
-    position: relative;
-    padding: 40px 20px;
-    display: flex;
-    flex-direction: column;
-    max-width: 1200px;
-    width: 100%;
-    margin: 0 auto;
+  position: relative;
+  padding: 40px 20px;
+  display: flex;
+  flex-direction: column;
+  max-width: 1200px;
+  width: 100%;
+  margin: 0 auto;
 }
-
-
 
 /*
 
@@ -182,137 +176,130 @@ Loading
 
 */
 
-
-
-
 #loading__bar {
-    top: 20px;
-    width: 110vw; 
-    position: absolute;
-    left: 50%;
-    transform: translateX(-50%);
-    height: 5px;
-    background-color: rgba(111, 0, 255, 0.300);
-    overflow: hidden;
+  top: 20px;
+  width: 110vw;
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  height: 5px;
+  background-color: rgba(111, 0, 255, 0.3);
+  overflow: hidden;
 }
 
-
 .loading__progress {
-    width: 30%;
-    height: 100%;
-    background-color: rgb(111, 0, 255);
-    animation: loading 2s linear infinite ;
-    position: absolute;
+  width: 30%;
+  height: 100%;
+  background-color: rgb(111, 0, 255);
+  animation: loading 2s linear infinite;
+  position: absolute;
 }
 
 .loading__progress:nth-child(2) {
-    animation-delay: 1s;
+  animation-delay: 1s;
 }
 
 @keyframes loading {
-    from {
-        left: -30%;
-    }
-    to {
-        left:100%;
-    }
+  from {
+    left: -30%;
+  }
+  to {
+    left: 100%;
+  }
 }
 
 .cars__loading {
-    width: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    padding-top: 60px;
-    font-size: 60px;
-    color: #6030b1;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding-top: 60px;
+  font-size: 60px;
+  color: #6030b1;
 }
 
 #loading__spinner {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    position: relative;
-    bottom: -110px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+  bottom: -110px;
 }
 
 .loading__container {
-    display: flex;
-    justify-content: center;
-    flex-direction: column;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
 }
 
 .cars__loading--spinner {
-    right: 0;
-    left: 24rem;
-    font-size: 50px;
-    color: #6030b1;
-    display: inline-block;
-    animation: spin 1s linear infinite;
+  right: 0;
+  left: 24rem;
+  font-size: 50px;
+  color: #6030b1;
+  display: inline-block;
+  animation: spin 1s linear infinite;
 }
 
-
 @keyframes spin {
-    to {
-        transform: rotate(360deg);
-    }
+  to {
+    transform: rotate(360deg);
+  }
 }
 
 .loading__text {
-    font-size: 24px;
-    margin-top: 20px;
-    color: #6030b1;
+  font-size: 24px;
+  margin-top: 20px;
+  color: #6030b1;
 }
 
 .loading__text-sub {
-    font-size: 16px;
-    color: #6030b1;
+  font-size: 16px;
+  color: #6030b1;
 }
 
 .search__results {
-    color: #242424;
-    font-weight: 650;
-    font-size: 32px;
-    letter-spacing: .02em;
-    padding: 0 20px;
+  color: #242424;
+  font-weight: 650;
+  font-size: 32px;
+  letter-spacing: 0.02em;
+  padding: 0 20px;
 }
 
 .search__results--wrapper {
-    align-items: center;
-    display: flex;
-    justify-content: space-between;
-} 
+  align-items: center;
+  display: flex;
+  justify-content: space-between;
+}
 
 #price {
-    width: 100%;
-    height: 5px;
-    appearance: none;
-    -webkit-appearance: none;
-    background: #ddd;
-    border-radius: 10px;
-    cursor: pointer;
-    outline: none;
+  width: 100%;
+  height: 5px;
+  appearance: none;
+  -webkit-appearance: none;
+  background: #ddd;
+  border-radius: 10px;
+  cursor: pointer;
+  outline: none;
 }
 
 .filter__wrapper {
-    width: 100%;
-    max-width: 300px;
+  width: 100%;
+  max-width: 300px;
 }
 
 #price__filter {
-    width: 100%;
-    font-size: 20px;
-    border-radius: 12px;
-    padding-left: 12px;
-    border-width: 2.5px;
+  width: 100%;
+  font-size: 20px;
+  border-radius: 12px;
+  padding-left: 12px;
+  border-width: 2.5px;
 }
 
-#price__filter:hover, #price__filter:active {
-    border-color: #ff328f;
+#price__filter:hover,
+#price__filter:active {
+  border-color: #ff328f;
 }
-
-
-
 
 /*
 
@@ -323,95 +310,132 @@ Car Card
 */
 
 #cars {
-    padding-top: 40px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+  padding-top: 40px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
-
 .cars__wrapper {
-    margin: 0 auto;
-    width: 100%;
-    max-width: 1280px;
-    display: flex;
-    flex-wrap: wrap;
+  margin: 0 auto;
+  width: 100%;
+  max-width: 1280px;
+  display: flex;
+  flex-wrap: wrap;
 }
 
 .cars__container {
-    max-width: 1280px;
-    margin: 0 auto;
-    width: 100%;
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 50px;
+  max-width: 1280px;
+  margin: 0 auto;
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 50px;
 }
 
 .car {
-    border-radius: 15px;
-    overflow: hidden;
-    box-shadow: 0px 0px 10px 5px  #5f30b142;
-    transition: all 250ms ease;
-    cursor: pointer;
+  border-radius: 15px;
+  overflow: hidden;
+  box-shadow: 0px 0px 10px 5px #5f30b16b;
+  transition: all 300ms ease-in-out;
+  cursor: pointer;
 }
 
 .car__details {
-    padding: 12px 14px;
+  padding: 12px 14px;
 }
 
 .car__details p {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    margin-bottom: 10px;
-    
-} 
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 10px;
+  color: #6030b1;
+}
+
+.car__details h2 {
+  color: #6030b1;
+}
 
 .car__img {
-    width: 100%;
-    height: 200px;
-    object-fit: cover;
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
 }
 
 .car:hover {
-    scale: 1.10;
+  scale: 1.1;
+  box-shadow: 0px 0px 10px 5px #ff328f;
 }
 
 .car:active {
-    scale: 1;
+  scale: 1;
 }
 
 .not__found {
-    height: 100px;
-    width: 250px;
-    display: flex;
-    align-items: center;
-    flex-direction: column;
-    margin: 0 auto;
-    text-align: center;
+  height: 100px;
+  width: 250px;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  margin: 0 auto;
+  text-align: center;
 }
 
 .reset__btn {
-    margin-top: 16px;
-    padding: 16px;
-    background-color: #6030b1;
-    color: #ddd;
-    border-color: #ff328f;
-    font-weight: 700;
-    transition: all 250ms ease;
-    cursor: pointer;
+  margin-top: 16px;
+  padding: 16px;
+  background-color: #6030b1;
+  color: #ddd;
+  border-color: #ff328f;
+  font-weight: 700;
+  transition: all 250ms ease;
+  cursor: pointer;
 }
 
 .reset__btn:hover {
-    scale: 1.05;
+  scale: 1.05;
+}
+
+.car__menu {
+  display: flex;
+  border-radius: 15px;
+  background-color: rgba(177, 48, 166, 0.795);;
+  position: fixed;
+  top: 20px;
+    right: 20px;
+    z-index: 1000;
+    flex-direction: row-reverse;
+    padding: 10px;
+}
+
+.close__menu--car {
+  border: none;
+  background-color: transparent;
+  color: rgb(69, 0, 230);
+  position: relative;
+  font-size: 20px;
+  cursor: pointer;
+  left: 35%;
+  z-index: 1001;
+}
+
+.menu__links {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+}
+
+@media (min-width: 738px) {
+  .car__menu,
+  .menu__btn,
+  .close__menu {
+    display: none;
+  }
 }
 
 
-/*
- TABLET
-   601px - 1200px
-
-   */
 
 @media (max-width: 1200px) {
   .car:hover {
@@ -433,13 +457,13 @@ Car Card
     height: 220px;
     object-fit: cover;
   }
+
+
+
+
 }
 
-/*
- LARGE PHONES
-   401px - 600px
 
-   */
 
 @media (max-width: 738px) {
   .menu__btn {
@@ -470,7 +494,7 @@ Car Card
   }
 
   .nav__link .white {
-    color: #6030b1;
+    color: #ffff;
   }
 
   .nav__content--wrapper {
@@ -510,19 +534,11 @@ Car Card
   }
 }
 
-/*
- SMALL PHONES
-   400px and below
 
-   */
 
 @media (max-width: 400px) {
   .car:hover {
     scale: 1;
-  }
-
-  .logo {
-    width: 115px;
   }
 
   h1 {

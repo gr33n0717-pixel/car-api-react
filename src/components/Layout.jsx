@@ -1,10 +1,24 @@
 import React, { useState } from "react";
-import '../styles/Layout.css'
-
-
+import "../styles/Layout.css";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faSpinner, faMagnifyingGlass } from "@fortawesome/free-solid-svg-icons";
 
 const Layout = () => {
+  const [loading, setLoading] = useState(false);
+  // const [search, setSearch] = useState("");
+  // const navigate = useNavigate();
 
+  function onLoad() {
+    setLoading(true);
+  }
+
+  // function handleSearch(e) {
+  //   e.preventDefault();
+  //   const query = search.trim();
+  //   navigate(
+  //     query ? `/findcar?search=${encodeURIComponent(query)}` : "/findcar",
+  //   );
+  // }
 
   return (
     <section id="landing__page">
@@ -18,18 +32,26 @@ const Layout = () => {
               FIND YOU DREAM CAR WITH <span className="purple"> BLINKER</span>
             </h2>
           </div>
-          <div className="seacrh-bar__wrapper">
-            <input className="input__home" type="text" placeholder="Search by Model, Make or Keyword" />
-            <button className="not__loading" onClick="search()">
-              <i className="fa-solid fa-magnifying-glass"></i>
-              <i className="fa-solid fa-spinner spinner"></i>
+          <form className="seacrh-bar__wrapper">
+            <input
+              className="input__home"
+              type="text"
+              placeholder="Search by Model, Make or Keyword"
+            />
+            <button
+              className={loading ? "loading" : "not__loading"}
+              onClick={onLoad}
+              
+              disabled={loading}
+            >
+              {loading ? (
+                <FontAwesomeIcon icon={faSpinner} />
+              ) : (
+                <FontAwesomeIcon icon={faMagnifyingGlass} />
+              )}
             </button>
-          </div>
-          <img
-            className="building__img"
-            src="/building.png"
-            alt="building"
-          />
+          </form>
+          <img className="building__img" src="/building.png" alt="building" />
         </div>
       </div>
     </section>

@@ -63,32 +63,10 @@
     max-height: 50vh;
 }
 
-.fa-magnifying-glass {
-    font-size:40px;
-    color: rgb(255, 255, 255);
-}
 
-.spinner {
-    display: none;
-}
 
-.loading .fa-magnifying-glass {
-    display: none;
-}
 
-.loading .spinner {
-    display: inline-block;
-    animation: spin 1s linear infinite;
-    color: white;
-}
-
-@keyframes spin {
-    to {
-       transform: rotate(360deg); 
-    }
-}
-
-.not__loading {
+.not__loading, .loading {
     background-color: #6030b1;
     border: 1px solid;
     box-shadow: 7px 7px 14px rgba(122, 86, 183, 0.3);
@@ -109,8 +87,28 @@
     border: 1px solid #ff328f;
 }
 
+.fa-magnifying-glass {
+    font-size:40px;
+    color: rgb(255, 255, 255);
+}
+
+.loading {
+    background-color: #ff328f;
+    cursor: not-allowed;
+}
+ 
+.fa-spinner{
+    color: white;
+    display: inline-block;
+    animation: spinner 0.8s linear infinite;
+}
 
 
+@keyframes spinner {
+    to {
+       transform: rotate(360deg); 
+    }
+}
 
 
 
@@ -122,9 +120,6 @@ SMALL PHONE
 
 @media (max-width: 599px) {
 
-    .logo {
-        width: 120px;
-    }
 
     .building__img {
         display: none;
