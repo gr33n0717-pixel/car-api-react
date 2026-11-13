@@ -3,7 +3,7 @@ import { getCars } from "../data/CarsData";
 import { useEffect, useState } from "react";
 import "../styles/CarInfo.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faArrowLeft, faArrowRight, faArrowRotateBack } from "@fortawesome/free-solid-svg-icons";
+import { faArrowLeft, faArrowRight } from "@fortawesome/free-solid-svg-icons";
 
 const CarInfo = () => {
   const { id } = useParams();
