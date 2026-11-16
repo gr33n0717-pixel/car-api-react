@@ -18,16 +18,11 @@ const FindCar = () => {
     setPriceRange("");
   };
 
-  const handleSearch = (value) => (value === "" ? handleReset() : setQuery(value));
-  const handleFilter = (value) => (value === "" ? handleReset() : setPriceRange(value));
 
-  const scrollToTop = () => {
-    window.scrollTo({
-      top: 0,
-      behavior: 'smooth',
-    });
-  };
-
+  const handleSearch = (value) =>
+    value === "" ? handleReset() : setQuery(value);
+  const handleFilter = (value) =>
+    value === "" ? handleReset() : setPriceRange(value);
 
   return (
     <>
@@ -35,11 +30,14 @@ const FindCar = () => {
         <div className="browse__cars">
           <h1>Browse Our Cars</h1>
           <div className="input__wrap">
-            <Search onSearch={handleSearch} text={text} onTextChange={setText} />
+            <Search
+              onSearch={handleSearch}
+              text={text}
+              onTextChange={setText}
+            />
           </div>
         </div>
       </CarNav>
-
       <section id="search">
         <div className="search__results--wrapper">
           <h1 className="search__results">
@@ -54,7 +52,6 @@ const FindCar = () => {
           animeCount={animeCount}
         />
         <AnimeData animeQuery={query} onResults={setAnimeCount} />
-      <button className="to__top--btn" onClick={scrollToTop}>Back to top</button>
       </section>
     </>
   );

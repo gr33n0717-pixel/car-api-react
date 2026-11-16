@@ -1,7 +1,6 @@
 import { useEffect, useState } from "react";
 import notfound from "/notfound.svg";
 import { getCars } from "../data/CarsData";
-import "../styles/Cars.css";
 import Loading from "./Loading";
 import { Link } from "react-router-dom";
 
@@ -36,6 +35,7 @@ const Cars = ({ query, onReset, priceRange, animeCount }) => {
     return <Loading message="Searching for your car" />;
   }
 
+
   const filteredCars = cars.filter((car) => {
     const matchesTitle = car.title.toLowerCase().includes(query.toLowerCase());
     const matchesPrice =
@@ -67,30 +67,30 @@ const Cars = ({ query, onReset, priceRange, animeCount }) => {
         <div className="cars__wrapper">
           <div className="cars__container">
             {filteredCars.map((car) => (
-              <Link to={`/carinfo/${car.id}`}key={car.id}>
-              <div className="car" >
-                <img className="car__img" src={car.url} alt={car.title} />
-                <div className="car__details">
-                  <h2>{car.title}</h2>
-                  <p>
-                    <i className="fa-solid fa-gauge-high"></i>
-                    {car.mileage} miles
-                  </p>
-                  <p>
-                    <i className="fa-solid fa-car"></i>
-                    {car.type}
-                  </p>
-                  <p>
-                    <i className="fa-solid fa-gears"></i>
-                    {car.transmission}
-                  </p>
-                  <p>
-                    <span className="purple">
-                      ${car.price.toLocaleString()}
-                    </span>
-                  </p>
+              <Link to={`/carinfo/${car.id}`} key={car.id}>
+                <div className="car">
+                  <img className="car__img" src={car.url} alt={car.title} />
+                  <div className="car__details">
+                    <h2>{car.title}</h2>
+                    <p>
+                      <i className="fa-solid fa-gauge-high"></i>
+                      {car.mileage} miles
+                    </p>
+                    <p>
+                      <i className="fa-solid fa-car"></i>
+                      {car.type}
+                    </p>
+                    <p>
+                      <i className="fa-solid fa-gears"></i>
+                      {car.transmission}
+                    </p>
+                    <p>
+                      <span className="purple">
+                        ${car.price.toLocaleString()}
+                      </span>
+                    </p>
+                  </div>
                 </div>
-              </div>
               </Link>
             ))}
           </div>
