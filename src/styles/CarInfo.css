@@ -64,12 +64,25 @@
 .recommended__cars--container {
   padding: 12px;
   color: white;
-  background-color: black;
+  background: linear-gradient(-45deg,#c5266e, #8830c2, #ff328e );
+  animation: gradient 12s ease-in-out infinite;
+  background-size: 400% 400%;
   margin-top: 1rem;
   width: 100vw;
   margin-left: calc(50% - 50vw);
   margin-right: calc(50% - 50vw);
-  /* margin-bottom: calc(50% - 50vh); */
+}
+
+@keyframes gradient {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
 }
 
 .recommended__cars {
@@ -88,6 +101,7 @@
   flex-direction: row;
   overflow: hidden;
   align-items: center;
+  gap: 30px;
 }
 
 .recommended__cars--list img {
@@ -102,6 +116,11 @@
   color: white;
   background: transparent;
   font-size: 32px;
+  transition: all 300ms ease-in-out;
+}
+
+.next__btn:hover {
+  color: #f1006d;
 }
 
 /* Skeleton loading */
@@ -127,4 +146,18 @@
   height: 120px;
   width: 100%;
   margin: 18px 0px;
+}
+
+.skeleton__recommended--text {
+  width: 200px;
+  height: 25px;
+  margin-bottom: 1rem;
+  margin-top: 1rem;
+}
+
+.recommended__car--img {
+  width: 640px;
+  height: 330px;
+  padding: 12px;
+  border-radius: 50px;
 }

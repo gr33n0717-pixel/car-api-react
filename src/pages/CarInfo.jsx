@@ -12,7 +12,7 @@ const CarInfo = () => {
 
   useEffect(() => {
     async function loadCar() {
-      // return
+      // return;
       const cars = await getCars();
       setCar(cars.find((c) => String(c.id) === id));
       setLoading(false);
@@ -55,7 +55,6 @@ const CarInfo = () => {
                 </p>
               </div>
             </div>
-            
           </>
         ) : (
           <>
@@ -73,16 +72,46 @@ const CarInfo = () => {
           </>
         )}
       </div>
-      <div className="recommended__cars--container">
-        <div className="recommended__cars">
-          <strong className="recommended__text">Cars you may also like</strong>
-          <div className="recommended__cars--list">
-          <button className="next__btn"><FontAwesomeIcon icon={faArrowLeft}/></button>
-          <img src="/acura-1.jfif" alt="" />
-          <button className="next__btn"><FontAwesomeIcon icon={faArrowRight}/></button>
+
+      {!loading ? (
+        <>
+          <div className="recommended__cars--container">
+            <div className="recommended__cars">
+              <strong className="recommended__text">
+                Cars you may also like
+              </strong>
+              <div className="recommended__cars--list">
+                <button className="next__btn">
+                  <FontAwesomeIcon icon={faArrowLeft} />
+                </button>
+                <img src="/acura-1.jfif" alt="" />
+                <img src="/acura-1.jfif" alt="" />
+                <button className="next__btn">
+                  <FontAwesomeIcon icon={faArrowRight} />
+                </button>
+              </div>
+            </div>
           </div>
-        </div>
-      </div>
+        </>
+      ) : (
+        <>
+          <div className="recommended__cars--container">
+            <div className="recommended__cars">
+              <div className="skeleton skeleton__recommended--text"></div>
+              <div className="recommended__cars--list">
+                <button className="next__btn">
+                  <FontAwesomeIcon icon={faArrowLeft} />
+                </button>
+                <div className="skeleton recommended__car--img"></div>
+                <div className="skeleton recommended__car--img"></div>
+                <button className="next__btn">
+                  <FontAwesomeIcon icon={faArrowRight} />
+                </button>
+              </div>
+            </div>
+          </div>
+        </>
+      )}
     </>
   );
 };

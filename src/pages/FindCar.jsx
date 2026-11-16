@@ -21,6 +21,14 @@ const FindCar = () => {
   const handleSearch = (value) => (value === "" ? handleReset() : setQuery(value));
   const handleFilter = (value) => (value === "" ? handleReset() : setPriceRange(value));
 
+  const scrollToTop = () => {
+    window.scrollTo({
+      top: 0,
+      behavior: 'smooth',
+    });
+  };
+
+
   return (
     <>
       <CarNav>
@@ -46,6 +54,7 @@ const FindCar = () => {
           animeCount={animeCount}
         />
         <AnimeData animeQuery={query} onResults={setAnimeCount} />
+      <button className="to__top--btn" onClick={scrollToTop}>Back to top</button>
       </section>
     </>
   );
