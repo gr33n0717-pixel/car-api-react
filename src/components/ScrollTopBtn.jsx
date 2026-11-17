@@ -4,6 +4,8 @@ import { useLocation } from "react-router-dom";
 const ScrollTopButton = () => {
   const { pathname } = useLocation();
   const [showTop, setShowTop] = useState(false);
+  const showOnPage = pathname.startsWith("/findcar");
+
 
   const scrollToTop = () => {
     window.scrollTo({ top: 0, behavior: "smooth" });
@@ -21,7 +23,7 @@ const ScrollTopButton = () => {
     return () => window.removeEventListener("scroll", handleScroll);
   }, [[pathname]]);
 
-  if (pathname === "/" || !showTop) return null;
+  if (!showOnPage || !showTop) return null;
 
   return (
     <div className="btn__container">

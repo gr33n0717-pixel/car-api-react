@@ -1,6 +1,6 @@
 import { Link, useParams } from "react-router-dom";
 import { getCars } from "../data/CarsData";
-import { useEffect, useState } from "react";
+import { useEffect, useState, useRef } from "react";
 import "../styles/CarInfo.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faArrowLeft, faArrowRight } from "@fortawesome/free-solid-svg-icons";
@@ -9,10 +9,23 @@ const CarInfo = () => {
   const { id } = useParams();
   const [car, setCar] = useState([]);
   const [loading, setLoading] = useState(true);
+  const listRef = useRef(null);
+
+  const scrollLeft = () => {
+    listRef.current.scrollBy({
+      left: -900,
+      behavior: "smooth",
+    });
+  };
+  const scrollRight = () => {
+    listRef.current.scrollBy({
+      left: 900,
+      behavior: "smooth",
+    });
+  };
 
   useEffect(() => {
     async function loadCar() {
-      // return;
       const cars = await getCars();
       setCar(cars.find((c) => String(c.id) === id));
       setLoading(false);
@@ -80,13 +93,20 @@ const CarInfo = () => {
               <strong className="recommended__text">
                 Cars you may also like
               </strong>
-              <div className="recommended__cars--list">
-                <button className="next__btn">
+
+              <div className="recommended__cars--row">
+                <button className="next__btn"onClick={scrollLeft} >
                   <FontAwesomeIcon icon={faArrowLeft} />
                 </button>
-                <img src="/acura-1.jfif" alt="" />
-                <img src="/acura-1.jfif" alt="" />
-                <button className="next__btn">
+
+                <div className="recommended__cars--list" ref={listRef}>
+                  <img src="/acura-1.jfif" alt="" />
+                  <img src="/acura-1.jfif" alt="" />
+                  <img src="/acura-1.jfif" alt="" />
+                  <img src="/acura-1.jfif" alt="" />
+                </div>
+
+                <button className="next__btn" onClick={scrollRight}>
                   <FontAwesomeIcon icon={faArrowRight} />
                 </button>
               </div>
@@ -98,12 +118,16 @@ const CarInfo = () => {
           <div className="recommended__cars--container">
             <div className="recommended__cars">
               <div className="skeleton skeleton__recommended--text"></div>
-              <div className="recommended__cars--list">
+              <div className="recommended__cars--row">
                 <button className="next__btn">
                   <FontAwesomeIcon icon={faArrowLeft} />
                 </button>
-                <div className="skeleton recommended__car--img"></div>
-                <div className="skeleton recommended__car--img"></div>
+
+                <div className="recommended__cars--list">
+                  <div className="skeleton recommended__car--img"></div>
+                  <div className="skeleton recommended__car--img"></div>
+                </div>
+
                 <button className="next__btn">
                   <FontAwesomeIcon icon={faArrowRight} />
                 </button>
