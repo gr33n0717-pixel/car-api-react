@@ -5,18 +5,18 @@ const notImplemented = () => alert("This has not been implemented yet :(");
 
 const carMenu = [
   {
-    to: "/",
     label: "About Us",
     className: "nav__link link__hover-effect",
     onClick: notImplemented,
   },
+
   {
     to: "/",
     label: "Home",
     className: "nav__link link__hover-effect",
   },
+
   {
-    to: "/",
     label: "Contact",
     className: "nav__link--primary",
     onClick: notImplemented,

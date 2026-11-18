@@ -10,16 +10,17 @@ const CarInfo = () => {
   const [car, setCar] = useState([]);
   const [loading, setLoading] = useState(true);
   const listRef = useRef(null);
+  const [recommended, setRecommended] = useState([]);
 
   const scrollLeft = () => {
     listRef.current.scrollBy({
-      left: -900,
+      left: -listRef.current.clientWidth,
       behavior: "smooth",
     });
   };
   const scrollRight = () => {
     listRef.current.scrollBy({
-      left: 900,
+      left: listRef.current.clientWidth,
       behavior: "smooth",
     });
   };
@@ -29,6 +30,9 @@ const CarInfo = () => {
       const cars = await getCars();
       setCar(cars.find((c) => String(c.id) === id));
       setLoading(false);
+
+      const others = cars.filter((c) => String(c.id) !== id);
+      setRecommended(others);
     }
     loadCar();
   }, [id]);
@@ -95,15 +99,16 @@ const CarInfo = () => {
               </strong>
 
               <div className="recommended__cars--row">
-                <button className="next__btn"onClick={scrollLeft} >
+                <button className="next__btn" onClick={scrollLeft}>
                   <FontAwesomeIcon icon={faArrowLeft} />
                 </button>
 
                 <div className="recommended__cars--list" ref={listRef}>
-                  <img src="/acura-1.jfif" alt="" />
-                  <img src="/acura-1.jfif" alt="" />
-                  <img src="/acura-1.jfif" alt="" />
-                  <img src="/acura-1.jfif" alt="" />
+                  {recommended.map((rec) => (
+                    <Link key={rec.id} to={`/carinfo/${rec.id}`}>
+                      <img src={rec.url} alt="" />
+                    </Link>
+                  ))}
                 </div>
 
                 <button className="next__btn" onClick={scrollRight}>
