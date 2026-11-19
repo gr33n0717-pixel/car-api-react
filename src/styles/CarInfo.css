@@ -112,28 +112,23 @@
   width: 100%;
   min-width: 0;
   scrollbar-width: none;
-  flex: 1 1 0;
+}
+
+.recommended__cars--list a {
+  /* width: 100%;
+  flex: 0 0 calc(50% - 15px); */
 }
 
 .recommended__cars--list img {
-  padding: 12px;
-  border-radius: 50px;
-  flex:0 0 calc(50% - 15px);
-  height: auto;
+  flex: 0 0 calc(50% - 15px);  
+  aspect-ratio: 640 / 330; 
 }
-
-
 
 .recommended__car--img {
-  min-width: 0;
-  max-width: 640px;
-  height: auto;
-  padding: 12px;
+  flex: 0 0 calc(50% - 15px);  
+  aspect-ratio: 640 / 330; 
   border-radius: 50px;
-  flex: 1 1 0;
-  aspect-ratio: 640 / 330;
 }
-
 
 
 .next__btn {

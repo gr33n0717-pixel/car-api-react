@@ -28,12 +28,14 @@ const CarInfo = () => {
   useEffect(() => {
     async function loadCar() {
       const cars = await getCars();
+      // return
       setCar(cars.find((c) => String(c.id) === id));
       setLoading(false);
 
       const others = cars.filter((c) => String(c.id) !== id);
-      setRecommended(others);
+      setRecommended(others.slice(0, 4));
     }
+    setLoading(true)
     loadCar();
   }, [id]);
 
