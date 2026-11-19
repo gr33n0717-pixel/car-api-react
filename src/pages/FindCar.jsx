@@ -5,10 +5,14 @@ import Cars from "../components/Cars";
 import Search from "../components/Search";
 import Filter from "../components/Filter";
 import { AnimeData } from "../data/AnimeData";
+import { useSearchParams } from "react-router-dom";
 
 const FindCar = () => {
-  const [query, setQuery] = useState("");
-  const [text, setText] = useState("");
+  const [searchParams] = useSearchParams()
+  const initial = searchParams.get("search") ?? "";
+
+  const [query, setQuery] = useState(initial);
+  const [text, setText] = useState(initial);
   const [priceRange, setPriceRange] = useState("");
   const [animeCount, setAnimeCount] = useState(0);
 
