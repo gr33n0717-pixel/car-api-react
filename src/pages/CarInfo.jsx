@@ -28,14 +28,14 @@ const CarInfo = () => {
   useEffect(() => {
     async function loadCar() {
       const cars = await getCars();
-      // return
       setCar(cars.find((c) => String(c.id) === id));
       setLoading(false);
 
       const others = cars.filter((c) => String(c.id) !== id);
-      setRecommended(others.slice(0, 4));
+      const shuffled = [...others].sort(() => Math.random() - .5)
+      setRecommended(shuffled.slice(0, 4))
     }
-    setLoading(true)
+    setLoading(true);
     loadCar();
   }, [id]);
 
@@ -97,7 +97,7 @@ const CarInfo = () => {
           <div className="recommended__cars--container">
             <div className="recommended__cars">
               <strong className="recommended__text">
-                Cars you may also like
+                Cars you may also like!
               </strong>
 
               <div className="recommended__cars--row">
@@ -108,7 +108,7 @@ const CarInfo = () => {
                 <div className="recommended__cars--list" ref={listRef}>
                   {recommended.map((rec) => (
                     <Link key={rec.id} to={`/carinfo/${rec.id}`}>
-                      <img src={rec.url} alt="" />
+                      <img className="recommended__img" src={rec.url} alt="" />
                     </Link>
                   ))}
                 </div>
