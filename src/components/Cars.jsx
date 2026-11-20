@@ -12,12 +12,13 @@ const priceRanges = {
   HIGH_TO_VERY_HIGH: [60000, 100000],
 };
 
-const Cars = ({ query, onReset, priceRange, animeCount }) => {
+const Cars = ({ query, onReset, priceRange, onResults, onLoadingChange }) => {
   const [cars, setCars] = useState([]);
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
     async function fetchCars() {
+      onLoadingChange(true);
       setLoading(true);
       try {
         const data = await getCars();
@@ -25,16 +26,12 @@ const Cars = ({ query, onReset, priceRange, animeCount }) => {
       } catch (error) {
         console.error(error);
       } finally {
+        onLoadingChange(false);
         setLoading(false);
       }
     }
     fetchCars();
   }, []);
-
-  if (loading) {
-    return <Loading message="Searching for your car" />;
-  }
-
 
   const filteredCars = cars.filter((car) => {
     const matchesTitle = car.title.toLowerCase().includes(query.toLowerCase());
@@ -45,8 +42,15 @@ const Cars = ({ query, onReset, priceRange, animeCount }) => {
           car.price <= priceRanges[priceRange][1];
     return matchesTitle && matchesPrice;
   });
+  useEffect(() => {
+    onResults(filteredCars.length);
+  }, [query, priceRange, filteredCars.length, onResults]);
 
-  if (filteredCars.length === 0 && animeCount === 0) {
+  if (loading) {
+    return <Loading message="Searching for your car" />;
+  }
+
+  if (filteredCars.length === 0) {
     return (
       <div id="invalid__search" className="not__found">
         <img src={notfound} alt="" />

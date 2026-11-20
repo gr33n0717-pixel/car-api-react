@@ -8,20 +8,20 @@ import { AnimeData } from "../data/AnimeData";
 import { useSearchParams } from "react-router-dom";
 
 const FindCar = () => {
-  const [searchParams] = useSearchParams()
+  const [searchParams] = useSearchParams();
   const initial = searchParams.get("search") ?? "";
-
   const [query, setQuery] = useState(initial);
   const [text, setText] = useState(initial);
   const [priceRange, setPriceRange] = useState("");
   const [animeCount, setAnimeCount] = useState(0);
+  const [carCount, setCarCount] = useState(0);
+  const [carLoading, setCarLoading] = useState(true);
 
   const handleReset = () => {
     setQuery("");
     setText("");
     setPriceRange("");
   };
-
 
   const handleSearch = (value) =>
     value === "" ? handleReset() : setQuery(value);
@@ -54,6 +54,8 @@ const FindCar = () => {
           onReset={handleReset}
           priceRange={priceRange}
           animeCount={animeCount}
+          onResults={setCarCount}
+          onLoadingChange={setCarLoading}
         />
         <AnimeData animeQuery={query} onResults={setAnimeCount} />
       </section>
