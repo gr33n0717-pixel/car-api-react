@@ -180,3 +180,24 @@
   margin-bottom: 1rem;
   margin-top: 1rem;
 }
+
+
+/* DESKTOPS */
+@media (max-width: 1200px) {
+  
+}
+
+
+/* TABLETS */
+
+@media (max-width: 768px) {
+
+}
+
+
+
+/* PHONES */
+
+@media (max-width:480px) {
+
+}
