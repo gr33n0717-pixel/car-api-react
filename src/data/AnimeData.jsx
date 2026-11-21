@@ -1,15 +1,18 @@
 import axios from "axios";
-import React, { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
-import Loading from "../components/Loading";
 
-export const AnimeData = ({ animeQuery, onResults }) => {
+export const AnimeData = ({
+  animeQuery,
+  onResults,
+  onLoadingChange,
+  showResults,
+}) => {
   const [getAnime, setGetAnime] = useState([]);
-  const [loading, setLoading] = useState(false);
 
   async function fetchAnime() {
-    setLoading(true);
     onResults(null);
+    onLoadingChange(true);
 
     const minWait = (ms) => new Promise((resolve) => setTimeout(resolve, ms));
 
@@ -19,7 +22,7 @@ export const AnimeData = ({ animeQuery, onResults }) => {
           params: { "filter[text]": animeQuery },
           timeout: 8000,
         }),
-        minWait(5000),
+        minWait(1000),
       ]);
       setGetAnime(response.data.data);
       onResults(response.data.data.length);
@@ -28,7 +31,7 @@ export const AnimeData = ({ animeQuery, onResults }) => {
       setGetAnime([]);
       onResults(0);
     } finally {
-      setLoading(false);
+      onLoadingChange(false);
     }
   }
 
@@ -36,27 +39,30 @@ export const AnimeData = ({ animeQuery, onResults }) => {
     if (animeQuery === "") {
       setGetAnime([]);
       onResults(0);
-      setLoading(false);
+      onLoadingChange(false);
       return;
     }
     fetchAnime();
   }, [animeQuery]);
 
-  if (loading) return <Loading message="Searching for your anime" />;
-
   return (
-    <div className="anime__container">
-      {getAnime.map((anime) => (
-        <Link to={`/anime/${anime.id}`} key={anime.id}>
-          <div className="anime__card">
-            <img src={anime.attributes.posterImage.medium} />
-            <h2>
-              {anime.attributes.titles.en || anime.attributes.canonicalTitle}
-            </h2>
-            <h3>{anime.attributes.startDate}</h3>
-          </div>
-        </Link>
-      ))}
-    </div>
+    <>
+      {showResults && (
+        <div className="anime__container">
+          {getAnime.map((anime) => (
+            <Link to={`/anime/${anime.id}`} key={anime.id}>
+              <div className="anime__card">
+                <img src={anime.attributes.posterImage.medium} />
+                <h2>
+                  {anime.attributes.titles.en ||
+                    anime.attributes.canonicalTitle}
+                </h2>
+                <h3>{anime.attributes.startDate}</h3>
+              </div>
+            </Link>
+          ))}
+        </div>
+      )}
+    </>
   );
 };

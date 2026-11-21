@@ -1,7 +1,5 @@
 import { useEffect, useState } from "react";
-import notfound from "/notfound.svg";
 import { getCars } from "../data/CarsData";
-import Loading from "./Loading";
 import { Link } from "react-router-dom";
 
 const priceRanges = {
@@ -12,14 +10,18 @@ const priceRanges = {
   HIGH_TO_VERY_HIGH: [60000, 100000],
 };
 
-const Cars = ({ query, onReset, priceRange, onResults, onLoadingChange }) => {
+const Cars = ({
+  query,
+  priceRange,
+  onResults,
+  onLoadingChange,
+  showResults,
+}) => {
   const [cars, setCars] = useState([]);
-  const [loading, setLoading] = useState(true);
 
   useEffect(() => {
     async function fetchCars() {
       onLoadingChange(true);
-      setLoading(true);
       try {
         const data = await getCars();
         setCars(data);
@@ -27,7 +29,6 @@ const Cars = ({ query, onReset, priceRange, onResults, onLoadingChange }) => {
         console.error(error);
       } finally {
         onLoadingChange(false);
-        setLoading(false);
       }
     }
     fetchCars();
@@ -46,60 +47,43 @@ const Cars = ({ query, onReset, priceRange, onResults, onLoadingChange }) => {
     onResults(filteredCars.length);
   }, [query, priceRange, filteredCars.length, onResults]);
 
-  if (loading) {
-    return <Loading message="Searching for your car" />;
-  }
-
-  if (filteredCars.length === 0) {
-    return (
-      <div id="invalid__search" className="not__found">
-        <img src={notfound} alt="" />
-        <h2 className="loading__text">No search results found</h2>
-        <h3 className="loading__text-sub">
-          Click below to reset, or search for another car/anime
-        </h3>
-        <button className="reset__btn" onClick={onReset}>
-          Reset Filter
-        </button>
-      </div>
-    );
-  }
-
   return (
     <>
-      <div id="cars">
-        <div className="cars__wrapper">
-          <div className="cars__container">
-            {filteredCars.map((car) => (
-              <Link to={`/carinfo/${car.id}`} key={car.id}>
-                <div className="car">
-                  <img className="car__img" src={car.url} alt={car.title} />
-                  <div className="car__details">
-                    <h2>{car.title}</h2>
-                    <p>
-                      <i className="fa-solid fa-gauge-high"></i>
-                      {car.mileage} miles
-                    </p>
-                    <p>
-                      <i className="fa-solid fa-car"></i>
-                      {car.type}
-                    </p>
-                    <p>
-                      <i className="fa-solid fa-gears"></i>
-                      {car.transmission}
-                    </p>
-                    <p>
-                      <span className="purple">
-                        ${car.price.toLocaleString()}
-                      </span>
-                    </p>
+      {showResults && (
+        <div id="cars">
+          <div className="cars__wrapper">
+            <div className="cars__container">
+              {filteredCars.map((car) => (
+                <Link to={`/carinfo/${car.id}`} key={car.id}>
+                  <div className="car">
+                    <img className="car__img" src={car.url} alt={car.title} />
+                    <div className="car__details">
+                      <h2>{car.title}</h2>
+                      <p>
+                        <i className="fa-solid fa-gauge-high"></i>
+                        {car.mileage} miles
+                      </p>
+                      <p>
+                        <i className="fa-solid fa-car"></i>
+                        {car.type}
+                      </p>
+                      <p>
+                        <i className="fa-solid fa-gears"></i>
+                        {car.transmission}
+                      </p>
+                      <p>
+                        <span className="purple">
+                          ${car.price.toLocaleString()}
+                        </span>
+                      </p>
+                    </div>
                   </div>
-                </div>
-              </Link>
-            ))}
+                </Link>
+              ))}
+            </div>
           </div>
         </div>
-      </div>
+      )}
     </>
   );
 };

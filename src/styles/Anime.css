@@ -7,6 +7,7 @@ a {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 26px;
+  padding-top: 40px;
 }
 
 .anime__card img {
@@ -223,7 +224,7 @@ Skeleton Loading
     .anime__container {
     grid-template-columns: repeat(2, 1fr);
     gap: 30px;
-    padding: 0 25px;
+    padding: 40px 0 0 25px;
   }
 
   .anime__card{
