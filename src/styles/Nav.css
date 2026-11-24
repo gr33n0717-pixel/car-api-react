@@ -177,7 +177,7 @@ SMALL PHONE
 
 */
 
-@media (max-width: 599px) {
+@media (max-width: 786px) {
   .navbar__home {
     padding: 0 15px;
   }
@@ -193,4 +193,5 @@ SMALL PHONE
   .building__img {
     display: none;
   }
+
 }

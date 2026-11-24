@@ -31,6 +31,8 @@ const Anime = () => {
 
   return (
     <>
+    <div className="anime__main">
+
         <img
           className="anime__backdrop"
           src="/BG-img.jpg"
@@ -121,6 +123,7 @@ const Anime = () => {
           </>
         )}
       </div>
+    </div>
     </>
   );
 };

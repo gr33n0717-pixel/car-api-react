@@ -11,6 +11,7 @@ const CarInfo = () => {
   const [loading, setLoading] = useState(true);
   const listRef = useRef(null);
   const [recommended, setRecommended] = useState([]);
+  
 
   const scrollLeft = () => {
     listRef.current.scrollBy({
@@ -28,9 +29,9 @@ const CarInfo = () => {
   useEffect(() => {
     async function loadCar() {
       const cars = await getCars();
+      // return
       setCar(cars.find((c) => String(c.id) === id));
       setLoading(false);
-
       const others = cars.filter((c) => String(c.id) !== id);
       const shuffled = [...others].sort(() => Math.random() - .5)
       setRecommended(shuffled.slice(0, 4))
@@ -109,6 +110,7 @@ const CarInfo = () => {
                   {recommended.map((rec) => (
                     <Link key={rec.id} to={`/carinfo/${rec.id}`}>
                       <img className="recommended__img" src={rec.url} alt="" />
+                      <h3 className="recommended__title">{rec.title}</h3>
                     </Link>
                   ))}
                 </div>
@@ -123,6 +125,7 @@ const CarInfo = () => {
       ) : (
         <>
           <div className="recommended__cars--container">
+            
             <div className="recommended__cars">
               <div className="skeleton skeleton__recommended--text"></div>
               <div className="recommended__cars--row">

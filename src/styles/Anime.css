@@ -2,6 +2,10 @@ a {
   text-decoration: none;
 }
 
+.anime__main {
+  padding: 12px;
+}
+
 .anime__container {
   margin: 0 auto;
   display: grid;
@@ -220,33 +224,37 @@ Skeleton Loading
   }
 }
 
-@media (max-width:1200px) {
-    .anime__container {
+@media (max-width: 1200px) {
+  .anime__container {
     grid-template-columns: repeat(2, 1fr);
     gap: 30px;
-    padding: 40px 0 0 25px;
+    padding: 40px 0 0 0;
   }
 
-  .anime__card{
+  .anime__card {
     display: flex;
     align-items: center;
     flex-direction: column;
     max-width: 400px;
   }
+
+  #search {
+    max-width: 1200px;
+    }
 }
 
 @media (max-width: 768px) {
-  .anime__container {
+
+  .anime__info--content {
     display: flex;
     flex-direction: column;
-    width: 100%;
+  }
+
+  .anime__poster--img {
+    aspect-ratio: 2/3;
+  }
+
+  .anime__info--wrapper {
     align-items: center;
   }
-  .anime__card h2,
-h3 {
-  max-width: 390px;
 }
-  
-}
-
-
