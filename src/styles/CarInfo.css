@@ -67,7 +67,7 @@
   animation: gradient 12s ease-in-out infinite;
   background-size: 400% 400%;
   margin-top: 1rem;
-  width: 100vw;
+  width: 100%;
 }
 
 @keyframes gradient {
@@ -112,7 +112,6 @@
 .recommended__cars--list a {
   width: 100%;
   flex: 1 0 calc(50% - 16px);
-  aspect-ratio: 100 / 20;
   border-radius: 50px;
 }
 
@@ -132,8 +131,9 @@
 
 .recommended__title {
   margin: 0;
-  color: rgb(255, 0, 191);
+  color: rgb(255, 0, 149);
   font-weight: 800;
+  font-size: 26px;
 }
 
 .next__btn {
@@ -213,14 +213,26 @@
     aspect-ratio: auto;
   }
 
+  .recommended__cars--container {
+    min-height: 300px;
+  }
+
   .recommended__img {
     height: 200px;
+  }
+
+  .recommended__title {
+    font-size: 20px;
+  }
+
+  .car__details--card p:nth-child(5) {
+    display: none;
   }
 }
 
 /* PHONES */
 
-@media (max-width: 480px) {
+@media (max-width: 486px) {
   .next__btn {
     display: none;
   }
@@ -230,8 +242,9 @@
   }
 
   .recommended__cars--container {
-    overflow: auto;
+    overflow-y: hidden;
     margin-top: 4rem;
+    height: 30vh;
   }
 
   .back__cars {
@@ -243,5 +256,7 @@
     margin-top: 1.5em;
   }
 
-  
+  .recommended__title {
+    
+  }
 }

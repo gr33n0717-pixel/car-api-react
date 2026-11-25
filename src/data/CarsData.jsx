@@ -1,7 +1,12 @@
+let cachedCars = null;
+
 export function getCars() {
+  if (cachedCars) {
+    return Promise.resolve(cachedCars);
+  }
   return new Promise((resolve) => {
     setTimeout(() => {
-      resolve([
+      const cars = [
         {
           id: 1,
           title: "Toyota GR GX 2026",
@@ -266,7 +271,13 @@ export function getCars() {
           description:
             "The IS 500 F Sport was developed for enthusiasts who want traditional V8 performance in a luxury sport sedan. It features a naturally aspirated 5.0L V8 engine producing 472 horsepower, paired with an eight-speed automatic transmission and rear-wheel drive. Its aggressive styling, sport-tuned suspension, and powerful engine deliver a blend of everyday comfort and old-school performance.",
         },
-      ]);
+      ];
+      cachedCars = cars;
+      resolve(cachedCars);
     }, 2000);
   });
+}
+
+export function hasCachedCars() {
+  return cachedCars !== null
 }

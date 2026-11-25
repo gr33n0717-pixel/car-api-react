@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { getCars } from "../data/CarsData";
+import { getCars, hasCachedCars } from "../data/CarsData";
 import { Link } from "react-router-dom";
 
 const priceRanges = {
@@ -21,16 +21,24 @@ const Cars = ({
 
   useEffect(() => {
     async function fetchCars() {
-      onLoadingChange(true);
+      const isCached = hasCachedCars();
+
+      if (!isCached) {
+        onLoadingChange(true);
+      }
+
       try {
         const data = await getCars();
         setCars(data);
       } catch (error) {
         console.error(error);
       } finally {
-        onLoadingChange(false);
+        if (!isCached) {
+          onLoadingChange(false);
+        }
       }
     }
+
     fetchCars();
   }, []);
 

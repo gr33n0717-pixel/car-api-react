@@ -7,7 +7,7 @@ import Filter from "../components/Filter";
 import { AnimeData } from "../data/AnimeData";
 import { useSearchParams } from "react-router-dom";
 import Loading from "../components/Loading";
-import notfound from "../../public/notfound.svg";
+import notfound from "/notfound.svg";
 
 const FindCar = () => {
   const [searchParams] = useSearchParams();

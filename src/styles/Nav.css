@@ -29,7 +29,7 @@
   background: none;
   border: none;
   font-size: 30px;
-  color: #6030b1;
+  color: #b410d4;
   cursor: pointer;
   animation: openMenu 250ms ease-out;
 }
@@ -111,9 +111,8 @@
 }
 
 @media (min-width: 696px) {
-  
   .drop-down__menu,
-  .close__menu{
+  .close__menu {
     display: none;
   }
 }
@@ -186,12 +185,7 @@ SMALL PHONE
     font-size: 26px;
   }
 
-  .nav__links--home {
-    display: none;
-  }
-
   .building__img {
     display: none;
   }
-
 }

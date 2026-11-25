@@ -49,7 +49,7 @@ input {
   background: none;
   border: none;
   font-size: 30px;
-  color: #6030b1;
+  color: #b410d4;
   cursor: pointer;
   position: fixed;
   top: 20px;
@@ -401,7 +401,7 @@ Car Card
 }
 
 .car__menu {
-  display: flex;
+  display: none;
   border-radius: 15px;
   background-color: rgba(177, 48, 166, 0.795);
   position: fixed;
@@ -410,17 +410,20 @@ Car Card
   z-index: 1000;
   flex-direction: row-reverse;
   padding: 10px;
+  margin: 1rem;
 }
 
 .close__menu--car {
   border: none;
   background-color: transparent;
   color: rgb(69, 0, 230);
-  position: relative;
+  position: fixed;
   font-size: 20px;
   cursor: pointer;
-  left: 35%;
   z-index: 1001;
+  display: none;
+  top: 40px;
+  right: 40px;
 }
 
 .menu__links {
@@ -438,7 +441,7 @@ Car Card
   }
 
   .nav__content--wrapper {
-    padding: 0 20px;
+    padding: 0 40px;
   }
 
   .cars__container {
@@ -455,9 +458,14 @@ Car Card
 }
 
 @media (max-width: 768px) {
-  .menu__btn {
+
+  
+  .close__menu--car,
+  .menu__btn,
+  .car__menu {
     display: block;
-  }
+    }
+
 
   .car:hover {
     scale: 1;
@@ -522,17 +530,13 @@ Car Card
     object-fit: cover;
   }
 
-  .car__menu,
-  .menu__btn,
-  .close__menu {
-    display: none;
+  .input__wrap {
+    width: 400px;
   }
 
-  option {
-    font-size: 16px;
-    max-width: 80px;
-
-    padding: 20px;
+  .filter__wrapper select,
+  .filter__wrapper ::picker(select) {
+    appearance: base-select;
   }
 }
 

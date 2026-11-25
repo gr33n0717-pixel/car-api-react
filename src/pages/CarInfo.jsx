@@ -1,4 +1,4 @@
-import { Link, useParams } from "react-router-dom";
+import { Link, useNavigate, useParams } from "react-router-dom";
 import { getCars } from "../data/CarsData";
 import { useEffect, useState, useRef } from "react";
 import "../styles/CarInfo.css";
@@ -11,6 +11,7 @@ const CarInfo = () => {
   const [loading, setLoading] = useState(true);
   const listRef = useRef(null);
   const [recommended, setRecommended] = useState([]);
+  const navigate = useNavigate()
   
 
   const scrollLeft = () => {
@@ -29,7 +30,6 @@ const CarInfo = () => {
   useEffect(() => {
     async function loadCar() {
       const cars = await getCars();
-      // return
       setCar(cars.find((c) => String(c.id) === id));
       setLoading(false);
       const others = cars.filter((c) => String(c.id) !== id);
@@ -45,11 +45,9 @@ const CarInfo = () => {
   return (
     <>
       <img className="car__backdrop" src="/backgound-car.jpg" />
-      <Link to="/findcar">
-        <button className="back__cars">
+        <button onClick={() => navigate(-1)} className="back__cars">
           <FontAwesomeIcon icon={faArrowLeft} />
         </button>
-      </Link>
       <div className="car__info--wrapper">
         {!loading ? (
           <>
