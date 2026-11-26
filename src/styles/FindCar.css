@@ -19,7 +19,6 @@ input {
 }
 
 .navbar {
-  margin: -20px;
   display: flex;
   align-items: center;
   flex-direction: column;
@@ -181,13 +180,14 @@ Loading
 
 #loading__bar {
   top: 20px;
-  width: 110vw;
+  width: 100vw;
   position: absolute;
   left: 50%;
   transform: translateX(-50%);
   height: 5px;
   background-color: rgba(111, 0, 255, 0.3);
   overflow: hidden;
+  margin-top: -1.25em;
 }
 
 .loading__progress {
@@ -382,6 +382,7 @@ Car Card
   align-items: center;
   flex-direction: column;
   margin: 0 auto;
+  margin-top: 2em;
   text-align: center;
 }
 
@@ -455,17 +456,27 @@ Car Card
     height: 220px;
     object-fit: cover;
   }
+
+  .navbar,
+  .nav__menu--wrapper {
+    margin: 0;
+  }
+  #loading__bar {
+    max-width: 100%;
+    margin-top: -1.25em;
+  }
+  .input__wrap {
+    max-width: 100%;
+  }
 }
 
 @media (max-width: 768px) {
-
-  
   .close__menu--car,
   .menu__btn,
   .car__menu {
     display: block;
-    }
-
+    position: absolute;
+  }
 
   .car:hover {
     scale: 1;
@@ -561,6 +572,8 @@ Car Card
   .cars__container {
     padding: 0 12px;
     gap: 20px;
+    display: flex;
+    flex-direction: column;
   }
 
   .car__img {
@@ -571,9 +584,5 @@ Car Card
 
   .car__details {
     padding: 10px 12px;
-  }
-
-  .input__wrap {
-    max-width: 400px;
   }
 }

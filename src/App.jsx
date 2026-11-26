@@ -3,7 +3,6 @@ import Home from "./pages/Home";
 import FindCar from "./pages/FindCar";
 import Anime from "./pages/Anime";
 import CarInfo from "./pages/CarInfo";
-import ScrollTopButton from "./components/ScrollTopBtn";
 
 function App() {
   return (
@@ -14,7 +13,6 @@ function App() {
         <Route path="/carinfo/:id" element={<CarInfo />} />
         <Route path="/anime/:id" element={<Anime />} />
       </Routes>
-      <ScrollTopButton />
     </>
   );
 }

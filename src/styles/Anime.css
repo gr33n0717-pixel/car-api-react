@@ -258,3 +258,12 @@ Skeleton Loading
     align-items: center;
   }
 }
+
+
+@media (max-width: 486px) {
+  .anime__container {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+  }
+}

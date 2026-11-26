@@ -34,11 +34,10 @@ const FindCar = () => {
   const showCars = carCount > 0;
   const showAnime = animeCount > 0;
   const noResults =
-    query.trim() !== "" &&
     !carLoading &&
     !animeLoading &&
-    carCount === 0 &&
-    animeCount === 0;
+    ((query.trim() !== "" && carCount === 0 && animeCount === 0) ||
+      (priceRange !== "" && carCount === 0));
 
   const isLoading = !showCars && !showAnime && (carLoading || animeLoading);
 
@@ -71,13 +70,14 @@ const FindCar = () => {
           onLoadingChange={setCarLoading}
           showResults={showCars}
         />
-        <AnimeData
-          animeQuery={query}
-          onResults={setAnimeCount}
-          onLoadingChange={setAnimeLoading}
-          showResults={showAnime}
-        />
-
+        {!priceRange && (
+          <AnimeData
+            animeQuery={query}
+            onResults={setAnimeCount}
+            onLoadingChange={setAnimeLoading}
+            showResults={showAnime}
+          />
+        )}
         {noResults && (
           <div id="invalid__search" className="not__found">
             <img src={notfound} alt="not__found--img" />
@@ -90,6 +90,9 @@ const FindCar = () => {
             </button>
           </div>
         )}
+        <div className="btn__container">
+          <button className="to__top--btn">Back to top ↑</button>
+        </div>
       </section>
     </>
   );
