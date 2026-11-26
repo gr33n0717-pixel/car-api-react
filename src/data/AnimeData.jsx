@@ -22,7 +22,7 @@ export const AnimeData = ({
           params: { "filter[text]": animeQuery },
           timeout: 8000,
         }),
-        minWait(1000),
+        minWait(2000),
       ]);
       setGetAnime(response.data.data);
       onResults(response.data.data.length);
